@@ -55,6 +55,7 @@ void Sort::quickSort() {
 
     quickSortAlgo(quickSortArray, 0, arraySize - 1);
 
+    //Timing
     clock_t end = clock();
     float duration = (float(end - start) / (CLOCKS_PER_SEC)) * 1000;
     cout << "Start time: " << start << endl;
@@ -63,11 +64,11 @@ void Sort::quickSort() {
 }
 
 void Sort::mergeSort() {
-
     clock_t start = clock();
 
     mergeAlgo(mergeSortArray, 0, arraySize - 1);
 
+    //Timing
     clock_t end = clock();
     float duration = (float(end - start) / (CLOCKS_PER_SEC)) * 1000;
     cout << "Start time: " << start << endl;
@@ -92,7 +93,7 @@ void Sort::selectionSort() {
         selectionSortArray[min] = selectionSortArray[i];
         selectionSortArray[i] = temp;
     }
-
+    //Timing
     clock_t end = clock();
     float duration = (float(end - start) / (CLOCKS_PER_SEC)) * 1000;
     cout << "Start time: " << start << endl;
@@ -114,7 +115,7 @@ void Sort::insertionSort() {
         }
         insertionSortArray[k + 1] = temp;
     }
-
+    //Timing
     clock_t end = clock();
     float duration = (float(end - start) / (CLOCKS_PER_SEC)) * 1000;
     cout << "Start time: " << start << endl;
@@ -132,7 +133,7 @@ void Sort::bubbleSort() {
             }
         }
     }
-
+    //Timing
     clock_t end = clock();
     float duration = (float(end - start) / (CLOCKS_PER_SEC)) * 1000;
     cout << "Start time: " << start << endl;
@@ -159,6 +160,7 @@ int Sort::partition(double * array, int l, int r) {
             swap(array[p], array[j]);
         }
     }
+    //swap
     swap(array[p + 1], array[r]);
     return (p + 1);
 }
